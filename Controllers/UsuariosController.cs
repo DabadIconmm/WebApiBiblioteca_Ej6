@@ -12,7 +12,7 @@ namespace Ejercicio_Sesión_1.Controllers
 {
     [ApiController]
     [Route("api/usuarios")]
-    // 5.3
+    
     public class UsuariosController : ControllerBase
     {
         private readonly ApplicationDbContext context;
@@ -25,7 +25,7 @@ namespace Ejercicio_Sesión_1.Controllers
             this.hashService = hashService;
         }
 
-        // 5.3.b
+        //6.2.b
         [HttpPost("hash/nuevousuario")]
         public async Task<ActionResult> PostNuevoUsuarioHash([FromBody] DTOUsuario usuario)
         {
@@ -43,7 +43,7 @@ namespace Ejercicio_Sesión_1.Controllers
             return Ok(newUsuario);
         }
 
-        // 5.3.c
+        //6.2.c
         [HttpPost("login")]
         public async Task<ActionResult> Login([FromBody] DTOUsuario usuario)
         {
@@ -65,6 +65,7 @@ namespace Ejercicio_Sesión_1.Controllers
             }
         }
 
+        //6.2.d
         private DTOLoginResponse GenerarToken(DTOUsuario credencialesUsuario)
         {
             var claims = new List<Claim>()
