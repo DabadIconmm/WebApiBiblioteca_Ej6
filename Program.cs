@@ -39,6 +39,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(opciones =>
 });
 
 builder.Services.AddDataProtection();
+//6.1
+builder.Services.AddTransient<HashService>();
 
 builder.Services.AddHttpContextAccessor();
 

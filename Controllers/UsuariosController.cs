@@ -18,7 +18,8 @@ namespace Ejercicio_Sesión_1.Controllers
         private readonly ApplicationDbContext context;
         private readonly IConfiguration configuration;
         private readonly HashService hashService;
-        public UsuariosController(ApplicationDbContext context, IConfiguration configuration, HashService hashService)
+        public UsuariosController(ApplicationDbContext context, IConfiguration configuration, 
+            HashService hashService)
         {
             this.context = context;
             this.configuration = configuration;
