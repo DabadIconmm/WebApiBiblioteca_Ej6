@@ -7,6 +7,9 @@ using System.Text;
 using Ejercicio_Sesión_1.DTOs;
 using Ejercicio_Sesión_1.Entidades;
 using Ejercicio_Sesión_1.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+
 
 namespace Ejercicio_Sesión_1.Controllers
 {
@@ -67,6 +70,8 @@ namespace Ejercicio_Sesión_1.Controllers
         }
 
         //6.2.d
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [HttpPost("renovarToken")]
         private DTOLoginResponse GenerarToken(DTOUsuario credencialesUsuario)
         {
             var claims = new List<Claim>()

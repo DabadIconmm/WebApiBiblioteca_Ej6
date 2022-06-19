@@ -328,3 +328,4 @@ C:\Users\dabad\Documents\Work\IconWork\Formación\C#\Ejercicios\Sesion6_RabbitMQ
 C:\Users\dabad\Documents\Work\IconWork\Formación\C#\Ejercicios\Sesion6_RabbitMQ\Mod\WebApiBiblioteca_DanielAbad\obj\Debug\net6.0\Ejercicio Sesión 4.pdb
 C:\Users\dabad\Documents\Work\IconWork\Formación\C#\Ejercicios\Sesion6_RabbitMQ\Mod\WebApiBiblioteca_DanielAbad\obj\Debug\net6.0\Ejercicio Sesión 4.genruntimeconfig.cache
 C:\Users\dabad\Documents\Work\IconWork\Formación\C#\Ejercicios\Sesion6_RabbitMQ\Mod\WebApiBiblioteca_DanielAbad\obj\Debug\net6.0\ref\Ejercicio Sesión 4.dll
+C:\Users\dabad\Documents\Work\IconWork\Formación\C#\Ejercicios\Sesion6_RabbitMQ\Mod\WebApiBiblioteca_DanielAbad\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
