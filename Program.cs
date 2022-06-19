@@ -2,8 +2,12 @@ using Ejercicio_Sesión_1;
 using Ejercicio_Sesión_1.Filtros;
 using Ejercicio_Sesión_1.Middlewares;
 using Ejercicio_Sesión_1.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Serilog;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,12 +43,55 @@ builder.Services.AddDbContext<ApplicationDbContext>(opciones =>
 });
 
 builder.Services.AddDataProtection();
+//6.1
+builder.Services.AddTransient<HashService>();
 
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddHttpClient("webapi", x => { x.BaseAddress = new Uri("https://localhost:44381"); });
 
 builder.Services.AddHostedService<TareaProgramadaService>();
+
+//Configuration JwT
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+               .AddJwtBearer(opciones => opciones.TokenValidationParameters = new TokenValidationParameters
+               {
+                   ValidateIssuer = false,
+                   ValidateAudience = false,
+                   ValidateLifetime = true,
+                   ValidateIssuerSigningKey = true,
+                   IssuerSigningKey = new SymmetricSecurityKey(
+                     Encoding.UTF8.GetBytes(builder.Configuration["ClaveJWT"])),
+                   ClockSkew = TimeSpan.Zero
+               });
+//6.3 - Configutation Swagger with tokens
+builder.Services.AddSwaggerGen(c =>
+{
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[]{}
+                    }
+                });
+
+});
 
 // Serilog
 Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Configuration).CreateLogger();

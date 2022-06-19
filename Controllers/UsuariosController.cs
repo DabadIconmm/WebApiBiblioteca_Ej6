@@ -7,25 +7,29 @@ using System.Text;
 using Ejercicio_Sesión_1.DTOs;
 using Ejercicio_Sesión_1.Entidades;
 using Ejercicio_Sesión_1.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+
 
 namespace Ejercicio_Sesión_1.Controllers
 {
     [ApiController]
     [Route("api/usuarios")]
-    // 5.3
+    
     public class UsuariosController : ControllerBase
     {
         private readonly ApplicationDbContext context;
         private readonly IConfiguration configuration;
         private readonly HashService hashService;
-        public UsuariosController(ApplicationDbContext context, IConfiguration configuration, HashService hashService)
+        public UsuariosController(ApplicationDbContext context, IConfiguration configuration, 
+            HashService hashService)
         {
             this.context = context;
             this.configuration = configuration;
             this.hashService = hashService;
         }
 
-        // 5.3.b
+        //6.2.b
         [HttpPost("hash/nuevousuario")]
         public async Task<ActionResult> PostNuevoUsuarioHash([FromBody] DTOUsuario usuario)
         {
@@ -43,7 +47,7 @@ namespace Ejercicio_Sesión_1.Controllers
             return Ok(newUsuario);
         }
 
-        // 5.3.c
+        //6.2.c
         [HttpPost("login")]
         public async Task<ActionResult> Login([FromBody] DTOUsuario usuario)
         {
@@ -65,6 +69,9 @@ namespace Ejercicio_Sesión_1.Controllers
             }
         }
 
+        //6.2.d
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [HttpPost("renovarToken")]
         private DTOLoginResponse GenerarToken(DTOUsuario credencialesUsuario)
         {
             var claims = new List<Claim>()

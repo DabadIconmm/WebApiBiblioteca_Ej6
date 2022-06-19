@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "G5A5DX2TVkQ9vqBULEiKLPobe774pZtQlkEzqY/jAvE=",
+  "Hash": "ib1GtOriP09DeSVOOOlSB1hgz40IHQZaanYQ7/TcBhc=",
   "Source": "Ejercicio Sesión 4",
   "BasePath": "_content/Ejercicio Sesión 4",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Ejercicio Sesión 4\\wwwroot",
       "Source": "Ejercicio Sesión 4",
-      "ContentRoot": "C:\\Users\\dabad\\Documents\\Work\\IconWork\\Formación\\C#\\Ejercicios\\Sesion5_\\Ejercicio5\\WebApiBiblioteca_DanielAbad\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\dabad\\Documents\\Work\\IconWork\\Formación\\C#\\Ejercicios\\Sesion6_RabbitMQ\\Mod\\WebApiBiblioteca_DanielAbad\\wwwroot\\",
       "BasePath": "_content/Ejercicio Sesión 4",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\dabad\\Documents\\Work\\IconWork\\Formación\\C#\\Ejercicios\\Sesion5_\\Ejercicio5\\WebApiBiblioteca_DanielAbad\\wwwroot\\Archivo.txt",
+      "Identity": "C:\\Users\\dabad\\Documents\\Work\\IconWork\\Formación\\C#\\Ejercicios\\Sesion6_RabbitMQ\\Mod\\WebApiBiblioteca_DanielAbad\\wwwroot\\Archivo.txt",
       "SourceId": "Ejercicio Sesión 4",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\dabad\\Documents\\Work\\IconWork\\Formación\\C#\\Ejercicios\\Sesion5_\\Ejercicio5\\WebApiBiblioteca_DanielAbad\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\dabad\\Documents\\Work\\IconWork\\Formación\\C#\\Ejercicios\\Sesion6_RabbitMQ\\Mod\\WebApiBiblioteca_DanielAbad\\wwwroot\\",
       "BasePath": "_content/Ejercicio Sesión 4",
       "RelativePath": "Archivo.txt",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\Archivo.txt"
     },
     {
-      "Identity": "C:\\Users\\dabad\\Documents\\Work\\IconWork\\Formación\\C#\\Ejercicios\\Sesion5_\\Ejercicio5\\WebApiBiblioteca_DanielAbad\\wwwroot\\log.txt",
+      "Identity": "C:\\Users\\dabad\\Documents\\Work\\IconWork\\Formación\\C#\\Ejercicios\\Sesion6_RabbitMQ\\Mod\\WebApiBiblioteca_DanielAbad\\wwwroot\\log.txt",
       "SourceId": "Ejercicio Sesión 4",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\dabad\\Documents\\Work\\IconWork\\Formación\\C#\\Ejercicios\\Sesion5_\\Ejercicio5\\WebApiBiblioteca_DanielAbad\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\dabad\\Documents\\Work\\IconWork\\Formación\\C#\\Ejercicios\\Sesion6_RabbitMQ\\Mod\\WebApiBiblioteca_DanielAbad\\wwwroot\\",
       "BasePath": "_content/Ejercicio Sesión 4",
       "RelativePath": "log.txt",
       "AssetKind": "All",

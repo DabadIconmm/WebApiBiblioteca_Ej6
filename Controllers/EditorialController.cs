@@ -1,5 +1,7 @@
 ﻿using Ejercicio_Sesión_1.DTOs;
 using Ejercicio_Sesión_1.Entidades;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,6 +9,7 @@ namespace Ejercicio_Sesión_1.Controllers
 {
     [ApiController]
     [Route("api/EditorialController")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class EditorialController : ControllerBase
     {
 
